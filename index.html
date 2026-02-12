@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Date Night Preview</title>
+<title>Create Your Date Night 💕</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #ffeef3;
+  background: linear-gradient(135deg, #fff1f5, #ffe4ec);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,21 +17,30 @@ body {
 .card {
   background: white;
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
   width: 90%;
-  max-width: 600px;
+  max-width: 500px;
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 button {
   padding: 12px 25px;
-  margin-top: 20px;
+  margin-top: 15px;
   border-radius: 25px;
   border: none;
-  background: black;
+  background: #ff4d6d;
   color: white;
   cursor: pointer;
+  font-size: 16px;
 }
 </style>
 </head>
@@ -40,26 +48,26 @@ button {
 <body>
 
 <div class="card">
-<h1 id="title">Loading...</h1>
-<p id="message"></p>
-<button onclick="goLive()">Continue</button>
+<h2>Create Your Date Night Proposal 💖</h2>
+
+<input id="partner" placeholder="Partner Name">
+<input id="you" placeholder="Your Name">
+<input id="place" placeholder="Location (Optional)">
+<input id="date" placeholder="Date (Optional)">
+
+<button onclick="generate()">Preview My Page</button>
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const partner = params.get("partner") || "Someone Special";
-const you = params.get("you") || "Secret Admirer";
-const place = params.get("place") || "a surprise location";
+function generate() {
+  const partner = document.getElementById("partner").value;
+  const you = document.getElementById("you").value;
+  const place = document.getElementById("place").value;
+  const date = document.getElementById("date").value;
 
-document.getElementById("title").innerText =
-  partner + ", will you go on a date night with " + you + "?";
+  const url = `preview.html?partner=${encodeURIComponent(partner)}&you=${encodeURIComponent(you)}&place=${encodeURIComponent(place)}&date=${encodeURIComponent(date)}`;
 
-document.getElementById("message").innerText =
-  "A magical evening awaits at " + place + ".";
-
-function goLive() {
-  const query = window.location.search;
-  window.location.href = "unlocked.html" + query;
+  window.location.href = url;
 }
 </script>
 
