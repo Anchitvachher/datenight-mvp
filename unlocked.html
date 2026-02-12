@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Night Confirmed 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background: #ffe6f0;
+  text-align: center;
+  font-family: Arial;
+  padding: 40px;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: white;
+}
+</style>
+</head>
+<body>
+
+<h1 id="title"></h1>
+<p id="message"></p>
+
+<button id="yes" onclick="celebrate()">YES 💖</button>
+<button id="no">NO 🙈</button>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const partner = params.get("partner") || "Someone Special";
+const you = params.get("you") || "Secret Admirer";
+const place = params.get("place") || "a surprise location";
+
+document.getElementById("title").innerText =
+  partner + ", it's official! 💕";
+
+document.getElementById("message").innerText =
+  "Date night confirmed at " + place + " with " + you + " ✨";
+
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", function() {
+  noBtn.style.position = "absolute";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+});
+
+function celebrate() {
+  alert("See you at " + place + " 💕");
+}
+</script>
+
+</body>
+</html>
