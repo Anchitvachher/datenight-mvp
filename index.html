@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Date Night Surprise 💖</title>
+<title>Date Night Preview 💕</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff0f5;
+  background: #fff5f8;
   text-align: center;
   padding: 40px;
 }
@@ -25,11 +26,21 @@ body {
 .watermark {
   position: absolute;
   top: 40%;
-  left: 10%;
-  font-size: 28px;
-  color: rgba(255,0,0,0.2);
+  left: 5%;
+  font-size: 36px;
+  color: rgba(255,0,0,0.15);
   transform: rotate(-20deg);
   font-weight: bold;
+  pointer-events: none;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
 button {
@@ -37,50 +48,4 @@ button {
   margin: 10px;
   border: none;
   border-radius: 25px;
-  cursor: pointer;
-}
-
-#unlock {
-  background: #ff4d6d;
-  color: white;
-}
-</style>
-</head>
-<body>
-
-<div class="card">
-
-<div class="watermark">PREVIEW MODE</div>
-
-<h1 id="title"></h1>
-<p id="message"></p>
-
-<button disabled>YES 💕</button>
-<button disabled>NO 🙈</button>
-
-<br><br>
-
-<button id="unlock" onclick="unlock()">Unlock & Send – ₹399</button>
-
-</div>
-
-<script>
-const params = new URLSearchParams(window.location.search);
-
-const partner = params.get("partner") || "Someone Special";
-const you = params.get("you") || "Secret Admirer";
-const place = params.get("place") || "a surprise location";
-
-document.getElementById("title").innerText =
-  partner + ", will you go on a date night with " + you + "?";
-
-document.getElementById("message").innerText =
-  "A special evening awaits at " + place + " 💫";
-
-function unlock() {
-  window.location.href = "https://rzp.io/l/YOUR_PAYMENT_LINK";
-}
-</script>
-
-</body>
-</html>
+  cursor: poi
