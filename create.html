@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Your Date Night 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Arial;
+  background: #fff5f8;
+  text-align: center;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Create Your Date Night Proposal 💖</h2>
+
+<input id="partner" placeholder="Partner Name">
+<input id="you" placeholder="Your Name">
+<input id="place" placeholder="Location (Optional)">
+
+<br>
+<button onclick="generate()">Preview My Page</button>
+</div>
+
+<script>
+function generate() {
+  const partner = document.getElementById("partner").value;
+  const you = document.getElementById("you").value;
+  const place = document.getElementById("place").value;
+
+  const url = `index.html?partner=${partner}&you=${you}&place=${place}`;
+  window.location.href = url;
+}
+</script>
+
+</body>
+</html>
