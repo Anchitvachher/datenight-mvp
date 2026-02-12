@@ -34,18 +34,65 @@ body {
   pointer-events: none;
 }
 
-h1 {
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
 button {
   padding: 12px 25px;
   margin: 10px;
   border: none;
   border-radius: 25px;
-  cursor: poi
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#yes { background: #ff4d6d; color: white; }
+#no { background: #eee; }
+#send { background: #333; color: white; margin-top: 30px; }
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="watermark">PREVIEW MODE</div>
+
+<h1 id="title">Loading...</h1>
+<p id="message"></p>
+
+<button id="yes" disabled>YES 💖</button>
+<button id="no" disabled>NO 🙈</button>
+
+<br>
+
+<button id="send" onclick="goLive()">Send This Surprise 💌</button>
+
+</div>
+
+<script>
+try {
+
+const params = new URLSearchParams(window.location.search);
+
+const partner = params.get("partner") || "Someone Special";
+const you = params.get("you") || "Secret Admirer";
+const place = params.get("place") || "a surprise location";
+
+document.getElementById("title").innerText =
+  partner + ", will you go on a date night with " + you + "?";
+
+document.getElementById("message").innerText =
+  "A magical evening awaits at " + place + " ✨";
+
+} catch (error) {
+  console.log("Error:", error);
+}
+
+function goLive() {
+  const query = window.location.search;
+  window.location.href = "unlocked.html" + query;
+}
+</script>
+
+</body>
+</html>
+
