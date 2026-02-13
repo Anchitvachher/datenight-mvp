@@ -7,19 +7,16 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f8f6f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 40px;
 }
 
-.card {
+.container {
+  max-width: 700px;
+  margin: auto;
   background: white;
   padding: 40px;
   border-radius: 20px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 input {
@@ -31,48 +28,42 @@ input {
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 25px;
+  margin-top: 20px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 30px;
   border: none;
   background: black;
   color: white;
+  font-size: 16px;
   cursor: pointer;
+}
+h3 {
+  margin-top: 30px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-<h2>Create Your Wedding Invite 💍</h2>
+<div class="container">
+
+<h2>Create Wedding Invitation 💍</h2>
 
 <input id="bride" placeholder="Bride Name">
 <input id="groom" placeholder="Groom Name">
-<input id="date" placeholder="Wedding Date">
+<input id="date" placeholder="Wedding Date (e.g. 14 Feb 2026)">
 
-<input id="mehendi" placeholder="Event 1 Name (e.g. Mehendi)">
-<input id="mehendiDate" placeholder="Event 1 Date">
-<input id="mehendiVenue" placeholder="Event 1 Venue">
-<input id="map" placeholder="Google Maps Link">
+<h3>Event 1</h3>
+<input id="e1name" placeholder="Event Name">
+<input id="e1date" placeholder="Event Date">
+<input id="e1venue" placeholder="Venue">
+<input id="e1map" placeholder="Google Maps Link">
 
-<button onclick="generate()">Generate Invite</button>
-</div>
+<h3>Event 2</h3>
+<input id="e2name" placeholder="Event Name">
+<input id="e2date" placeholder="Event Date">
+<input id="e2venue" placeholder="Venue">
+<input id="e2map" placeholder="Google Maps Link">
 
-<script>
-function generate() {
-  const bride = encodeURIComponent(document.getElementById("bride").value);
-  const groom = encodeURIComponent(document.getElementById("groom").value);
-  const date = encodeURIComponent(document.getElementById("date").value);
-  const mehendi = encodeURIComponent(document.getElementById("mehendi").value);
-  const mehendiDate = encodeURIComponent(document.getElementById("mehendiDate").value);
-  const mehendiVenue = encodeURIComponent(document.getElementById("mehendiVenue").value);
-  const map = encodeURIComponent(document.getElementById("map").value);
-
-  window.location.href =
-    `invite.html?bride=${bride}&groom=${groom}&date=${date}&mehendi=${mehendi}&mehendiDate=${mehendiDate}&mehendiVenue=${mehendiVenue}&map=${map}`;
-}
-</script>
-
-</body>
-</html>
+<h3>Ev
