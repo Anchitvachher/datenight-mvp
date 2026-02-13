@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Wedding Invite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f6f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Create Your Wedding Invite 💍</h2>
+
+<input id="bride" placeholder="Bride Name">
+<input id="groom" placeholder="Groom Name">
+<input id="date" placeholder="Wedding Date">
+
+<input id="mehendi" placeholder="Event 1 Name (e.g. Mehendi)">
+<input id="mehendiDate" placeholder="Event 1 Date">
+<input id="mehendiVenue" placeholder="Event 1 Venue">
+<input id="map" placeholder="Google Maps Link">
+
+<button onclick="generate()">Generate Invite</button>
+</div>
+
+<script>
+function generate() {
+  const bride = encodeURIComponent(document.getElementById("bride").value);
+  const groom = encodeURIComponent(document.getElementById("groom").value);
+  const date = encodeURIComponent(document.getElementById("date").value);
+  const mehendi = encodeURIComponent(document.getElementById("mehendi").value);
+  const mehendiDate = encodeURIComponent(document.getElementById("mehendiDate").value);
+  const mehendiVenue = encodeURIComponent(document.getElementById("mehendiVenue").value);
+  const map = encodeURIComponent(document.getElementById("map").value);
+
+  window.location.href =
+    `invite.html?bride=${bride}&groom=${groom}&date=${date}&mehendi=${mehendi}&mehendiDate=${mehendiDate}&mehendiVenue=${mehendiVenue}&map=${map}`;
+}
+</script>
+
+</body>
+</html>
